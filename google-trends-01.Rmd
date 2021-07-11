@@ -14,6 +14,12 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning=FALSE)
 ```
 
+## Google Trends package
+
+Explore capabilities of the 
+**gtrendsR** package created by Philippe Massicotte <br />
+[gtrendsR vignette](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf)
+
 Libraries used:
 
 ```{r}
@@ -22,13 +28,25 @@ library(tidyverse)
 library(lubridate)
 library(scales)
 library(plotly)
+library(gridExtra)
+library(RColorBrewer)
 
 ```
 
-## Google Trends package
+Other/standard settings for markdown:
 
-gtrendsR package created by Philippe Massicotte
-[gtrendsR vignette](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf)
+```{r}
+## data viz settings
+theme_set(theme_light())
+##  RColorBrewer pallets
+##  - see all: display.brewer.all()
+##  - individual: display.brewer.pal(n=<number of colors>, name='<palette name>')
+##  - palette info: brewer.pal.info
+##  - select: brewer.pal(n=<number of colors>, name='<palette name>')[<selected index within n, name>]
+cbpal_d <- brewer.pal(n=9, name='Set1')[2:9] ## Set1 but excluding the red color in position 1
+```
+
+## Google Trends Parameters
 
 ```{r}
 ## MAJOR Parameters (other than search term)
@@ -60,20 +78,17 @@ cat_list <- gtrendsR::categories
 # gprop=c("web","news","images","froogle","youtube") 
 ```
 
-## Example 1
+## Example 1: single term
 
 ```{r}
-srch_term <- "the witcher"
-period <- "today 12-m"
-ctry <- "" ## blank = world; based on world countries ISO code
-prop <- c("web")
-cat 
-
-gt_results <- gtrends(keyword=srch_term,
-        geo=ctry,
-        time=period,
-        gprop=prop,
+## basic search
+## use gtrendsR to call google trends API
+gt_results <- gtrends(keyword='cryptocurrency',
+        geo="",
+        time="now 7-d",
+        gprop=c("web"),
         category=0)
+
 ```
 
 Returns a bundle of 7 data frames with different info, reflecting what is shown in the Google Trends interface:
@@ -87,7 +102,161 @@ names(gt_results)
 The main data with search terms for the selected search term, country, period, property, and category.
 
 ```{r}
-gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits))+geom_line()
+chart_title <- "Searches for: cryptocurrency"
+sub_title <- "Period: past 7 days; Geo: world; Prop: 'web'; Category: all"
+
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_manual(values=cbpal_d)+ ## customized option
+  labs(title=chart_title, subtitle=sub_title, x="", y="")
+
+```
+
+### Interest by Country
+
+```{r}
+## need to filter for top 20 countries
+top <- gt_results$interest_by_country %>% filter(!is.na(hits)) %>% slice_max(order_by=hits, n=20)
+
+chart_title <- "Countries with highest relative interest in cryptocurrency"
+sub_title <- "(based on overall searches w/in country - not worldwide searches)"
+top %>% ggplot(aes(x=reorder(location, hits), y=hits))+geom_col()+
+  coord_flip()+
+  scale_y_continuous(expand=expansion(add=c(0,5)))+
+  labs(title=chart_title, subtitle=sub_title, x='relative searches', y="")
+```
+
+### Related Topics
+
+```{r}
+  chart_title <- "crytopcurrency: related topics"
+  top <- gt_results$related_topics %>% filter(related_topics=='top' & !is.na(subject) &
+                                                subject!='<1')
+  top$value <- as.factor(top$value)
+  top$subject <- as.numeric(top$subject)
+  top %>% ggplot(aes(x=reorder(value, subject), y=subject))+geom_col()+
+  coord_flip()+
+    scale_y_continuous(expand=expansion(add=c(0,10)))+
+    labs(title=chart_title, y='', x='')
+```
+
+### Related Queries
+
+```{r}
+  chart_title <- "crytopcurrency: related queries"
+  top <- gt_results$related_queries %>% filter(related_queries=='top')
+  top$value <- as.factor(top$value)
+  top$subject <- as.numeric(top$subject)
+  top %>% ggplot(aes(x=reorder(value, subject), y=subject))+geom_col()+
+  coord_flip()+
+    scale_y_continuous(expand=expansion(add=c(0,10)))+
+    labs(title=chart_title, y='', x='')
+```
+
+## Example 1a: specific type of search
+
+You may notice in the Google Trends interface that when you type in various terms, different 'types' of searches for a given term may be suggested.
+
+* instead of standard 'search term' under the keyword you may see 'Topic' or 'Video game' or any number of other relevant themes.
+* these searches tend to be more refined for the term: trends may include broader reach based on the topic, or narrower focused on the specific theme.
+* afaik, no way to specify these variations within the gtrendsR/API query
+* CAN use the encoded variation of the term shown in the browser
+
+<insert image>
+![Google Trends example with suggested variation on search type](images/google_trends_search_type_example.png)
+
+1. Grab the encoded search term from URL
+2. Drop it in a URL decoder OR...just replace the '%2Fm%2F' with '/m/' and use the rest of the info as is.
+
+So in this case the keyword to use is: **'/m/0vpj4_b'**
+        
+```{r}
+gt_results_alt <- gtrends(keyword='/m/0vpj4_b',
+        geo="",
+        time="now 7-d",
+        gprop=c("web"),
+        category=0)
+```
+        
+
+```{r}
+chart_title <- "Searches for: Cryptocurrency - Topic"
+sub_title <- "Period: past 7 days; Geo: world; Prop: 'web'; Category: all"
+
+gt_results_alt$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_manual(values=cbpal_d)+ ## customized option
+  labs(title=chart_title, subtitle=sub_title, x="", y="")
+
+```
+
+## Example 2: multiple terms
+
+So the above is easy way to work with individual terms.
+
+### Set query parameters
+
+```{r}
+srch_term <- c("covid-19","climate change")
+period <- "today 3-m"
+ctry <- "" ## blank = world; based on world countries ISO code
+prop <- c("web")
+cat <- 0 ## 0 = all categories
+
+## user-friendly versions of parameters for use in chart titles or other query descriptions
+ctry_ <- ifelse(ctry=="","world",ctry)
+prop_ <- paste0(prop, collapse=", ")
+cat_ <- ifelse(cat==0,"all",cat)
+```
+
+### Get Results
+
+```{r}
+## use gtrendsR to call google trends API
+gt_results <- gtrends(keyword=srch_term,
+        geo=ctry,
+        time=period,
+        gprop=prop,
+        category=cat)
+```
+
+Returns bundle of same 7 data frames, with data for each search term within them:
+
+```{r}
+names(gt_results)
+```
+
+### Interest over time
+
+The main data with search terms for the selected search term, country, period, property, and category.
+
+```{r}
+chart_title <- paste0("Searches for: ",paste0(srch_term, collapse=", "))
+sub_title <- paste0("Period: ", period, "; Geo: ",ctry_,"; Prop: ", prop_,"; Category: ", cat_)
+
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_manual(values=cbpal_d)+ ## customized option
+  labs(title=chart_title, subtitle=sub_title, x="", y="")
+
+```
+### Related Topics
+
+```{r}
+## need better example
+```
+
+### Related Queries
+
+```{r}
+for(st in 1:length(srch_term)){
+  chart_title <- paste0("'",srch_term[st], "' related queries")
+  top <- gt_results$related_queries %>% filter(keyword==srch_term[st] & related_queries=='top')
+  top$value <- as.factor(top$value)
+  top$subject <- as.numeric(top$subject)
+  plot <- top %>% ggplot(aes(x=reorder(value, subject), y=subject))+geom_col()+
+  coord_flip()+
+    scale_y_continuous(expand=expansion(add=c(0,10)))+
+    labs(title=chart_title, y='', x='')
+  print(plot)
+}
 
 ```
 
