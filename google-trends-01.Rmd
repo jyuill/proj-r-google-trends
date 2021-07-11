@@ -1,0 +1,93 @@
+---
+title: "Google Trends Exploration"
+author: "JY"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: architect
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      message=FALSE,
+                      warning=FALSE)
+```
+
+Libraries used:
+
+```{r}
+library(gtrendsR) ## package for accessing Google Trends
+library(tidyverse)
+library(lubridate)
+library(scales)
+library(plotly)
+
+```
+
+## Google Trends package
+
+gtrendsR package created by Philippe Massicotte
+[gtrendsR vignette](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf)
+
+```{r}
+## MAJOR Parameters (other than search term)
+## Dates - correspond to options in the Google Trends interface
+## string specifies time span -> different time spans have different granularity
+## "now 1-H": last hour - by MINUTE
+## "now 4-H": last 4 hrs - by MINUTE
+## "now 1-d": last day - every 8 MINUTES
+## "now 7-d": last 7 days - HOURLY data
+## "today 1-m": last 30 days - DAILY data
+## "today 3-m": last 90 days - DAILY data
+## "today 12-m": last 12 months - WEEKLY data
+## "today+5-y": last 5 yrs (default) - WEEKLY data
+## "all" since beginning of Google Trends 2004
+## "YYYY-MM-DD YYYY-MM-DD": custom start / end date - granularity will depend on time spans above
+
+## Country list
+## use geo="" for world
+ctry_list_sub <- gtrendsR::countries
+ctry_list <- ctry_list_sub %>% filter(is.na(sub_code) & !is.na(name) & !grepl("=",name)) %>%
+  select(-sub_code)
+
+## Google trends categories
+## use cat=0 for all categories
+cat_list <- gtrendsR::categories
+
+## Google properties
+## all options - choose 1 or more
+# gprop=c("web","news","images","froogle","youtube") 
+```
+
+## Example 1
+
+```{r}
+srch_term <- "the witcher"
+period <- "today 12-m"
+ctry <- "" ## blank = world; based on world countries ISO code
+prop <- c("web")
+cat 
+
+gt_results <- gtrends(keyword=srch_term,
+        geo=ctry,
+        time=period,
+        gprop=prop,
+        category=0)
+```
+
+Returns a bundle of 7 data frames with different info, reflecting what is shown in the Google Trends interface:
+
+```{r}
+names(gt_results)
+```
+
+### Interest over time
+
+The main data with search terms for the selected search term, country, period, property, and category.
+
+```{r}
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits))+geom_line()
+
+```
+
