@@ -31,38 +31,42 @@ library(plotly)
 library(gridExtra)
 library(RColorBrewer)
 
-```
-
-Other/standard settings for markdown:
-
-```{r}
-## data viz settings
+## set default ggplot2 chart theme
 theme_set(theme_light())
-##  RColorBrewer pallets
-##  - see all: display.brewer.all()
-##  - individual: display.brewer.pal(n=<number of colors>, name='<palette name>')
-##  - palette info: brewer.pal.info
-##  - select: brewer.pal(n=<number of colors>, name='<palette name>')[<selected index within n, name>]
-cbpal_d <- brewer.pal(n=9, name='Set1')[2:9] ## Set1 but excluding the red color in position 1
 ```
 
 ## Google Trends Parameters
 
-```{r}
-## MAJOR Parameters (other than search term)
-## Dates - correspond to options in the Google Trends interface
-## string specifies time span -> different time spans have different granularity
-## "now 1-H": last hour - by MINUTE
-## "now 4-H": last 4 hrs - by MINUTE
-## "now 1-d": last day - every 8 MINUTES
-## "now 7-d": last 7 days - HOURLY data
-## "today 1-m": last 30 days - DAILY data
-## "today 3-m": last 90 days - DAILY data
-## "today 12-m": last 12 months - WEEKLY data
-## "today+5-y": last 5 yrs (default) - WEEKLY data
-## "all" since beginning of Google Trends 2004
-## "YYYY-MM-DD YYYY-MM-DD": custom start / end date - granularity will depend on time spans above
+Major parameters to fine-tune queries. These correspond with the options in the Google Trend online interface.
 
+* **Dates**:
+    + "now 1-H": last hour - by MINUTE
+    + "now 4-H": last 4 hrs - by MINUTE
+    + "now 1-d": last day - every 8 MINUTES
+    + "now 7-d": last 7 days - HOURLY data
+    + "today 1-m": last 30 days - DAILY data
+    + "today 3-m": last 90 days - DAILY data
+    + "today 12-m": last 12 months - WEEKLY data
+    + "today+5-y": last 5 yrs (default) - WEEKLY data
+    + "all" since beginning of Google Trends 2004
+    + "YYYY-MM-DD YYYY-MM-DD": custom start / end date - granularity will depend on time spans above
+<br />    
+* **Geo**:
+   + use gtrendsR::countries to see complete list
+   + close to 110,000 options, including country / state / city
+   + code below shows how to filter for countries
+   + **geo=""** for all countries
+<br />   
+* **Categories**:
+    + use gtrendsR::categories
+    + over 1,400 categories, with ids that are used in the query
+    + **category = 0** for all categories
+<br />    
+* **Google properies**:
+    + specify one or more of 'web', 'news', 'images', 'froogle', 'youtube'
+    + gprop=c("web", "youtube") as example for web and youtube search
+
+```{r}
 ## Country list
 ## use geo="" for world
 ctry_list_sub <- gtrendsR::countries
@@ -70,12 +74,7 @@ ctry_list <- ctry_list_sub %>% filter(is.na(sub_code) & !is.na(name) & !grepl("=
   select(-sub_code)
 
 ## Google trends categories
-## use cat=0 for all categories
 cat_list <- gtrendsR::categories
-
-## Google properties
-## all options - choose 1 or more
-# gprop=c("web","news","images","froogle","youtube") 
 ```
 
 ## Example 1: single term
@@ -106,7 +105,6 @@ chart_title <- "Searches for: cryptocurrency"
 sub_title <- "Period: past 7 days; Geo: world; Prop: 'web'; Category: all"
 
 gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
-  scale_color_manual(values=cbpal_d)+ ## customized option
   labs(title=chart_title, subtitle=sub_title, x="", y="")
 
 ```
@@ -183,7 +181,6 @@ chart_title <- "Searches for: Cryptocurrency - Topic"
 sub_title <- "Period: past 7 days; Geo: world; Prop: 'web'; Category: all"
 
 gt_results_alt$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
-  scale_color_manual(values=cbpal_d)+ ## customized option
   labs(title=chart_title, subtitle=sub_title, x="", y="")
 
 ```
@@ -233,7 +230,6 @@ chart_title <- paste0("Searches for: ",paste0(srch_term, collapse=", "))
 sub_title <- paste0("Period: ", period, "; Geo: ",ctry_,"; Prop: ", prop_,"; Category: ", cat_)
 
 gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
-  scale_color_manual(values=cbpal_d)+ ## customized option
   labs(title=chart_title, subtitle=sub_title, x="", y="")
 
 ```

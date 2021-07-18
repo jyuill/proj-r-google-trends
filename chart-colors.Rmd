@@ -1,0 +1,125 @@
+---
+title: "Chart Colors"
+author: "JY"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+## libraries
+library(tidyverse)
+library(scales)
+library(lubridate)
+library(RColorBrewer)
+library(viridis)
+library(gtrendsR) ## for getting data from Google Trends
+
+## set default chart theme for ggplot2
+theme_set(theme_light())
+
+```
+
+## Use gtrendsR to get data 
+
+```{r}
+srch_term <- c("cryptocurrency","bitcoin","ethereum","dogecoin")
+period <- "today 3-m"
+ctry <- "" ## blank = world; based on world countries ISO code
+prop <- c("web")
+cat <- 0 ## 0 = all categories
+```
+
+```{r}
+## use gtrendsR to call google trends API
+gt_results <- gtrends(keyword=srch_term,
+        geo=ctry,
+        time=period,
+        gprop=prop,
+        category=cat)
+```
+
+## Charts
+
+### Default colors
+
+```{r}
+chart_title <- paste0("Searches for: ",paste0(srch_term, collapse=", "))
+
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  labs(title=chart_title, x="", y="")
+
+```
+
+### RColorBrewer
+
+```{r}
+##  RColorBrewer pallets
+##  - see all: display.brewer.all()
+##  - individual: display.brewer.pal(n=<number of colors>, name='<palette name>')
+##  - palette info: brewer.pal.info
+```
+
+```{r, fig.height=6, fig.width=8}
+display.brewer.all()
+```
+
+```{r}
+pal_select <- 'Set1'
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_brewer(palette=pal_select)+ ## customized option
+  labs(title=chart_title, x="", y="")
+```
+
+```{r}
+##  - select: brewer.pal(n=<number of colors>, name='<palette name>')[<selected index within n, name>]
+cbpal_d <- brewer.pal(n=9, name='Set1')[2:9] ## Set1 but excluding the red color in position 1
+
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_manual(values=cbpal_d)+ ## customized option
+  labs(title=chart_title, x="", y="")
+```
+
+```{r}
+pal_select <- 'Dark2'
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_brewer(palette=pal_select)+ ## customized option
+  labs(title=chart_title, x="", y="")
+```
+
+### Viridis
+
+Designed for visibility, including for those with color-blindness. 
+
+* continuous or discrete
+* evenly spaced across the number of items specified
+
+Variations:
+
+* A: magma
+* B: inferno
+* C: plasma
+* D: viridis (default)
+* E: cividis
+* F: rocket
+* G: mako
+* H: turbo
+
+```{r}
+## Viridis has 8 color palette variations
+show_col(viridis(option = "A", n=20)) ## magma
+show_col(viridis(option = "B", n=20)) ## inferno
+show_col(viridis(option = "C", n=20)) ## plasma
+show_col(viridis(option = "D", n=20)) ## viridis
+show_col(viridis(option = "E", n=20)) ## cividis
+show_col(viridis(option = "F", n=20)) ## rocket
+show_col(viridis(option = "G", n=20)) ## mako
+show_col(viridis(option = "H", n=20)) ## turbo
+```
+
+```{r}
+gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geom_line()+
+  scale_color_viridis(discrete = TRUE)+ ## TRUE because discrete categories
+  labs(title=chart_title, x="", y="")
+```
