@@ -1,0 +1,357 @@
+date,geo,time,gprop,category,keyword,hits
+2021-04-18T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-04-18T00:00:00Z,world,today 3-m,web,0,gold,100
+2021-04-18T00:00:00Z,world,today 3-m,web,0,bitcoin,85
+2021-04-18T00:00:00Z,world,today 3-m,web,0,dogecoin,45
+2021-04-19T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-04-19T00:00:00Z,world,today 3-m,web,0,gold,95
+2021-04-19T00:00:00Z,world,today 3-m,web,0,bitcoin,73.8
+2021-04-19T00:00:00Z,world,today 3-m,web,0,dogecoin,55.800000000000004
+2021-04-20T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-04-20T00:00:00Z,world,today 3-m,web,0,gold,90
+2021-04-20T00:00:00Z,world,today 3-m,web,0,bitcoin,57
+2021-04-20T00:00:00Z,world,today 3-m,web,0,dogecoin,55.5
+2021-04-21T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-04-21T00:00:00Z,world,today 3-m,web,0,gold,91
+2021-04-21T00:00:00Z,world,today 3-m,web,0,bitcoin,43.4
+2021-04-21T00:00:00Z,world,today 3-m,web,0,dogecoin,29.400000000000002
+2021-04-22T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-04-22T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-04-22T00:00:00Z,world,today 3-m,web,0,bitcoin,63
+2021-04-22T00:00:00Z,world,today 3-m,web,0,dogecoin,29.75
+2021-04-23T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-04-23T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-04-23T00:00:00Z,world,today 3-m,web,0,bitcoin,82.5
+2021-04-23T00:00:00Z,world,today 3-m,web,0,dogecoin,28.5
+2021-04-24T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-04-24T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-04-24T00:00:00Z,world,today 3-m,web,0,bitcoin,58.5
+2021-04-24T00:00:00Z,world,today 3-m,web,0,dogecoin,19.5
+2021-04-25T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-04-25T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-04-25T00:00:00Z,world,today 3-m,web,0,bitcoin,51
+2021-04-25T00:00:00Z,world,today 3-m,web,0,dogecoin,16.5
+2021-04-26T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-04-26T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-04-26T00:00:00Z,world,today 3-m,web,0,bitcoin,76
+2021-04-26T00:00:00Z,world,today 3-m,web,0,dogecoin,20
+2021-04-27T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-04-27T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-04-27T00:00:00Z,world,today 3-m,web,0,bitcoin,48
+2021-04-27T00:00:00Z,world,today 3-m,web,0,dogecoin,13.5
+2021-04-28T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-04-28T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-04-28T00:00:00Z,world,today 3-m,web,0,bitcoin,43.5
+2021-04-28T00:00:00Z,world,today 3-m,web,0,dogecoin,21
+2021-04-29T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-04-29T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-04-29T00:00:00Z,world,today 3-m,web,0,bitcoin,52
+2021-04-29T00:00:00Z,world,today 3-m,web,0,dogecoin,22
+2021-04-30T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-04-30T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-04-30T00:00:00Z,world,today 3-m,web,0,bitcoin,45
+2021-04-30T00:00:00Z,world,today 3-m,web,0,dogecoin,15
+2021-05-01T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-05-01T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-05-01T00:00:00Z,world,today 3-m,web,0,bitcoin,43.75
+2021-05-01T00:00:00Z,world,today 3-m,web,0,dogecoin,21
+2021-05-02T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-05-02T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-05-02T00:00:00Z,world,today 3-m,web,0,bitcoin,43.75
+2021-05-02T00:00:00Z,world,today 3-m,web,0,dogecoin,21
+2021-05-03T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-03T00:00:00Z,world,today 3-m,web,0,gold,91
+2021-05-03T00:00:00Z,world,today 3-m,web,0,bitcoin,49
+2021-05-03T00:00:00Z,world,today 3-m,web,0,dogecoin,26.25
+2021-05-04T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-05-04T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-05-04T00:00:00Z,world,today 3-m,web,0,bitcoin,46.66666666666667
+2021-05-04T00:00:00Z,world,today 3-m,web,0,dogecoin,66.66666666666667
+2021-05-05T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-05T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-05-05T00:00:00Z,world,today 3-m,web,0,bitcoin,47.125
+2021-05-05T00:00:00Z,world,today 3-m,web,0,dogecoin,81.25
+2021-05-06T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-06T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-05-06T00:00:00Z,world,today 3-m,web,0,bitcoin,42.42857142857143
+2021-05-06T00:00:00Z,world,today 3-m,web,0,dogecoin,51.85714285714286
+2021-05-07T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-07T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-05-07T00:00:00Z,world,today 3-m,web,0,bitcoin,40.85714285714286
+2021-05-07T00:00:00Z,world,today 3-m,web,0,dogecoin,48.714285714285715
+2021-05-08T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-08T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-05-08T00:00:00Z,world,today 3-m,web,0,bitcoin,42.25
+2021-05-08T00:00:00Z,world,today 3-m,web,0,dogecoin,73.125
+2021-05-09T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-09T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-05-09T00:00:00Z,world,today 3-m,web,0,bitcoin,42.85714285714286
+2021-05-09T00:00:00Z,world,today 3-m,web,0,dogecoin,128.57142857142856
+2021-05-10T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-05-10T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-05-10T00:00:00Z,world,today 3-m,web,0,bitcoin,43.875
+2021-05-10T00:00:00Z,world,today 3-m,web,0,dogecoin,63.375
+2021-05-11T00:00:00Z,world,today 3-m,web,0,stock market,9
+2021-05-11T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-05-11T00:00:00Z,world,today 3-m,web,0,bitcoin,44.57142857142857
+2021-05-11T00:00:00Z,world,today 3-m,web,0,dogecoin,44.57142857142857
+2021-05-12T00:00:00Z,world,today 3-m,web,0,stock market,11
+2021-05-12T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-05-12T00:00:00Z,world,today 3-m,web,0,bitcoin,51.333333333333336
+2021-05-12T00:00:00Z,world,today 3-m,web,0,dogecoin,38.5
+2021-05-13T00:00:00Z,world,today 3-m,web,0,stock market,12
+2021-05-13T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-05-13T00:00:00Z,world,today 3-m,web,0,bitcoin,119
+2021-05-13T00:00:00Z,world,today 3-m,web,0,dogecoin,45.5
+2021-05-14T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-14T00:00:00Z,world,today 3-m,web,0,gold,93
+2021-05-14T00:00:00Z,world,today 3-m,web,0,bitcoin,64.42857142857143
+2021-05-14T00:00:00Z,world,today 3-m,web,0,dogecoin,44
+2021-05-15T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-15T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-05-15T00:00:00Z,world,today 3-m,web,0,bitcoin,56.57142857142857
+2021-05-15T00:00:00Z,world,today 3-m,web,0,dogecoin,32.57142857142857
+2021-05-16T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-16T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-05-16T00:00:00Z,world,today 3-m,web,0,bitcoin,66
+2021-05-16T00:00:00Z,world,today 3-m,web,0,dogecoin,31.166666666666668
+2021-05-17T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-17T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-05-17T00:00:00Z,world,today 3-m,web,0,bitcoin,93.5
+2021-05-17T00:00:00Z,world,today 3-m,web,0,dogecoin,29.333333333333332
+2021-05-18T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-05-18T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-05-18T00:00:00Z,world,today 3-m,web,0,bitcoin,64
+2021-05-18T00:00:00Z,world,today 3-m,web,0,dogecoin,20.8
+2021-05-19T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-05-19T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-05-19T00:00:00Z,world,today 3-m,web,0,bitcoin,158.33333333333334
+2021-05-19T00:00:00Z,world,today 3-m,web,0,dogecoin,34.83333333333333
+2021-05-20T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-20T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-05-20T00:00:00Z,world,today 3-m,web,0,bitcoin,126.75
+2021-05-20T00:00:00Z,world,today 3-m,web,0,dogecoin,27.625
+2021-05-21T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-05-21T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-05-21T00:00:00Z,world,today 3-m,web,0,bitcoin,95
+2021-05-21T00:00:00Z,world,today 3-m,web,0,dogecoin,20
+2021-05-22T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-22T00:00:00Z,world,today 3-m,web,0,gold,81
+2021-05-22T00:00:00Z,world,today 3-m,web,0,bitcoin,90
+2021-05-22T00:00:00Z,world,today 3-m,web,0,dogecoin,19.8
+2021-05-23T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-23T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-05-23T00:00:00Z,world,today 3-m,web,0,bitcoin,95.85714285714285
+2021-05-23T00:00:00Z,world,today 3-m,web,0,dogecoin,20.42857142857143
+2021-05-24T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-24T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-05-24T00:00:00Z,world,today 3-m,web,0,bitcoin,91.2
+2021-05-24T00:00:00Z,world,today 3-m,web,0,dogecoin,17.6
+2021-05-25T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-25T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-05-25T00:00:00Z,world,today 3-m,web,0,bitcoin,78.75
+2021-05-25T00:00:00Z,world,today 3-m,web,0,dogecoin,17.5
+2021-05-26T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-05-26T00:00:00Z,world,today 3-m,web,0,gold,80
+2021-05-26T00:00:00Z,world,today 3-m,web,0,bitcoin,70
+2021-05-26T00:00:00Z,world,today 3-m,web,0,dogecoin,14
+2021-05-27T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-27T00:00:00Z,world,today 3-m,web,0,gold,81
+2021-05-27T00:00:00Z,world,today 3-m,web,0,bitcoin,51
+2021-05-27T00:00:00Z,world,today 3-m,web,0,dogecoin,10.5
+2021-05-28T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-05-28T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-05-28T00:00:00Z,world,today 3-m,web,0,bitcoin,63
+2021-05-28T00:00:00Z,world,today 3-m,web,0,dogecoin,12.25
+2021-05-29T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-29T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-05-29T00:00:00Z,world,today 3-m,web,0,bitcoin,63
+2021-05-29T00:00:00Z,world,today 3-m,web,0,dogecoin,10.5
+2021-05-30T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-05-30T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-05-30T00:00:00Z,world,today 3-m,web,0,bitcoin,56
+2021-05-30T00:00:00Z,world,today 3-m,web,0,dogecoin,10.5
+2021-05-31T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-05-31T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-05-31T00:00:00Z,world,today 3-m,web,0,bitcoin,53.33333333333333
+2021-05-31T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-01T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-01T00:00:00Z,world,today 3-m,web,0,gold,82
+2021-06-01T00:00:00Z,world,today 3-m,web,0,bitcoin,50
+2021-06-01T00:00:00Z,world,today 3-m,web,0,dogecoin,11.666666666666668
+2021-06-02T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-02T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-06-02T00:00:00Z,world,today 3-m,web,0,bitcoin,48.33333333333333
+2021-06-02T00:00:00Z,world,today 3-m,web,0,dogecoin,20
+2021-06-03T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-06-03T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-06-03T00:00:00Z,world,today 3-m,web,0,bitcoin,45
+2021-06-03T00:00:00Z,world,today 3-m,web,0,dogecoin,15
+2021-06-04T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-04T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-06-04T00:00:00Z,world,today 3-m,web,0,bitcoin,66
+2021-06-04T00:00:00Z,world,today 3-m,web,0,dogecoin,16
+2021-06-05T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-06-05T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-06-05T00:00:00Z,world,today 3-m,web,0,bitcoin,48.33333333333333
+2021-06-05T00:00:00Z,world,today 3-m,web,0,dogecoin,11.666666666666668
+2021-06-06T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-06T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-06-06T00:00:00Z,world,today 3-m,web,0,bitcoin,50
+2021-06-06T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-07T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-07T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-06-07T00:00:00Z,world,today 3-m,web,0,bitcoin,48.33333333333333
+2021-06-07T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-08T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-08T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-06-08T00:00:00Z,world,today 3-m,web,0,bitcoin,82
+2021-06-08T00:00:00Z,world,today 3-m,web,0,dogecoin,12
+2021-06-09T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-09T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-06-09T00:00:00Z,world,today 3-m,web,0,bitcoin,63.33333333333333
+2021-06-09T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-10T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-10T00:00:00Z,world,today 3-m,web,0,gold,84
+2021-06-10T00:00:00Z,world,today 3-m,web,0,bitcoin,44
+2021-06-10T00:00:00Z,world,today 3-m,web,0,dogecoin,6.666666666666667
+2021-06-11T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-11T00:00:00Z,world,today 3-m,web,0,gold,81
+2021-06-11T00:00:00Z,world,today 3-m,web,0,bitcoin,54
+2021-06-11T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-12T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-12T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-06-12T00:00:00Z,world,today 3-m,web,0,bitcoin,32
+2021-06-12T00:00:00Z,world,today 3-m,web,0,dogecoin,5.333333333333333
+2021-06-13T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-13T00:00:00Z,world,today 3-m,web,0,gold,78
+2021-06-13T00:00:00Z,world,today 3-m,web,0,bitcoin,32
+2021-06-13T00:00:00Z,world,today 3-m,web,0,dogecoin,5.333333333333333
+2021-06-14T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-14T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-06-14T00:00:00Z,world,today 3-m,web,0,bitcoin,64
+2021-06-14T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-15T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-15T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-06-15T00:00:00Z,world,today 3-m,web,0,bitcoin,54
+2021-06-15T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-16T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-16T00:00:00Z,world,today 3-m,web,0,gold,83
+2021-06-16T00:00:00Z,world,today 3-m,web,0,bitcoin,50
+2021-06-16T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-06-17T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-17T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-06-17T00:00:00Z,world,today 3-m,web,0,bitcoin,44
+2021-06-17T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-06-18T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-18T00:00:00Z,world,today 3-m,web,0,gold,91
+2021-06-18T00:00:00Z,world,today 3-m,web,0,bitcoin,46
+2021-06-18T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-19T00:00:00Z,world,today 3-m,web,0,stock market,4
+2021-06-19T00:00:00Z,world,today 3-m,web,0,gold,100
+2021-06-19T00:00:00Z,world,today 3-m,web,0,bitcoin,26.666666666666668
+2021-06-19T00:00:00Z,world,today 3-m,web,0,dogecoin,4
+2021-06-20T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-20T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-06-20T00:00:00Z,world,today 3-m,web,0,bitcoin,38.333333333333336
+2021-06-20T00:00:00Z,world,today 3-m,web,0,dogecoin,6.666666666666666
+2021-06-21T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-06-21T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-06-21T00:00:00Z,world,today 3-m,web,0,bitcoin,55
+2021-06-21T00:00:00Z,world,today 3-m,web,0,dogecoin,13.333333333333332
+2021-06-22T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-22T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-06-22T00:00:00Z,world,today 3-m,web,0,bitcoin,63
+2021-06-22T00:00:00Z,world,today 3-m,web,0,dogecoin,13.5
+2021-06-23T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-23T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-06-23T00:00:00Z,world,today 3-m,web,0,bitcoin,62
+2021-06-23T00:00:00Z,world,today 3-m,web,0,dogecoin,12
+2021-06-24T00:00:00Z,world,today 3-m,web,0,stock market,5
+2021-06-24T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-06-24T00:00:00Z,world,today 3-m,web,0,bitcoin,52
+2021-06-24T00:00:00Z,world,today 3-m,web,0,dogecoin,10
+2021-06-25T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-25T00:00:00Z,world,today 3-m,web,0,gold,91
+2021-06-25T00:00:00Z,world,today 3-m,web,0,bitcoin,40.5
+2021-06-25T00:00:00Z,world,today 3-m,web,0,dogecoin,7.5
+2021-06-26T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-26T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-06-26T00:00:00Z,world,today 3-m,web,0,bitcoin,52
+2021-06-26T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-27T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-06-27T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-06-27T00:00:00Z,world,today 3-m,web,0,bitcoin,50
+2021-06-27T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-28T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-28T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-06-28T00:00:00Z,world,today 3-m,web,0,bitcoin,36
+2021-06-28T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-06-29T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-29T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-06-29T00:00:00Z,world,today 3-m,web,0,bitcoin,46
+2021-06-29T00:00:00Z,world,today 3-m,web,0,dogecoin,8
+2021-06-30T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-06-30T00:00:00Z,world,today 3-m,web,0,gold,90
+2021-06-30T00:00:00Z,world,today 3-m,web,0,bitcoin,33
+2021-06-30T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-01T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-01T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-07-01T00:00:00Z,world,today 3-m,web,0,bitcoin,31.5
+2021-07-01T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-07-02T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-02T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-07-02T00:00:00Z,world,today 3-m,web,0,bitcoin,28.5
+2021-07-02T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-07-03T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-07-03T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-07-03T00:00:00Z,world,today 3-m,web,0,bitcoin,28.5
+2021-07-03T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-04T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-07-04T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-07-04T00:00:00Z,world,today 3-m,web,0,bitcoin,28.5
+2021-07-04T00:00:00Z,world,today 3-m,web,0,dogecoin,6
+2021-07-05T00:00:00Z,world,today 3-m,web,0,stock market,8
+2021-07-05T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-07-05T00:00:00Z,world,today 3-m,web,0,bitcoin,28.5
+2021-07-05T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-06T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-06T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-07-06T00:00:00Z,world,today 3-m,web,0,bitcoin,27
+2021-07-06T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-07T00:00:00Z,world,today 3-m,web,0,stock market,5
+2021-07-07T00:00:00Z,world,today 3-m,web,0,gold,85
+2021-07-07T00:00:00Z,world,today 3-m,web,0,bitcoin,25.5
+2021-07-07T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-08T00:00:00Z,world,today 3-m,web,0,stock market,7
+2021-07-08T00:00:00Z,world,today 3-m,web,0,gold,86
+2021-07-08T00:00:00Z,world,today 3-m,web,0,bitcoin,30
+2021-07-08T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-09T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-09T00:00:00Z,world,today 3-m,web,0,gold,87
+2021-07-09T00:00:00Z,world,today 3-m,web,0,bitcoin,27
+2021-07-09T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-10T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-07-10T00:00:00Z,world,today 3-m,web,0,gold,89
+2021-07-10T00:00:00Z,world,today 3-m,web,0,bitcoin,24
+2021-07-10T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-11T00:00:00Z,world,today 3-m,web,0,stock market,3
+2021-07-11T00:00:00Z,world,today 3-m,web,0,gold,88
+2021-07-11T00:00:00Z,world,today 3-m,web,0,bitcoin,24
+2021-07-11T00:00:00Z,world,today 3-m,web,0,dogecoin,3
+2021-07-12T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-12T00:00:00Z,world,today 3-m,web,0,gold,94
+2021-07-12T00:00:00Z,world,today 3-m,web,0,bitcoin,34
+2021-07-12T00:00:00Z,world,today 3-m,web,0,dogecoin,4
+2021-07-13T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-13T00:00:00Z,world,today 3-m,web,0,gold,92
+2021-07-13T00:00:00Z,world,today 3-m,web,0,bitcoin,27
+2021-07-13T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-14T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-14T00:00:00Z,world,today 3-m,web,0,gold,94
+2021-07-14T00:00:00Z,world,today 3-m,web,0,bitcoin,27
+2021-07-14T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
+2021-07-15T00:00:00Z,world,today 3-m,web,0,stock market,6
+2021-07-15T00:00:00Z,world,today 3-m,web,0,gold,90
+2021-07-15T00:00:00Z,world,today 3-m,web,0,bitcoin,27
+2021-07-15T00:00:00Z,world,today 3-m,web,0,dogecoin,4.5
