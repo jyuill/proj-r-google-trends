@@ -95,6 +95,9 @@ Designed for visibility, including for those with color-blindness.
 * continuous or discrete
 * evenly spaced across the number of items specified
 
+Resources:
+* https://www.thinkingondata.com/something-about-viridis-library/
+
 Variations:
 
 * A: magma

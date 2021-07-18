@@ -3,9 +3,10 @@ title: "Google Trends Exploration"
 author: "JY"
 date: "`r Sys.Date()`"
 output:
-  prettydoc::html_pretty:
-    theme: architect
-    highlight: github
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
 ---
 
 ```{r setup, include=FALSE}
@@ -17,8 +18,11 @@ knitr::opts_chunk$set(echo = TRUE,
 ## Google Trends package
 
 Explore capabilities of the 
-**gtrendsR** package created by Philippe Massicotte <br />
+**gtrendsR** package created by Philippe Massicotte <br  />
 [gtrendsR vignette](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf)
+
+Other useful references: <br />
+https://blog.quiet.ly/industry/exploring-google-trends-explore-function-finding-keywords-queries/
 
 Libraries used:
 
@@ -29,7 +33,6 @@ library(lubridate)
 library(scales)
 library(plotly)
 library(gridExtra)
-library(RColorBrewer)
 
 ## set default ggplot2 chart theme
 theme_set(theme_light())
@@ -79,6 +82,8 @@ cat_list <- gtrendsR::categories
 
 ## Example 1: single term
 
+Using the gtrendsR package to get Google Trends for a single search term.
+
 ```{r}
 ## basic search
 ## use gtrendsR to call google trends API
@@ -87,7 +92,6 @@ gt_results <- gtrends(keyword='cryptocurrency',
         time="now 7-d",
         gprop=c("web"),
         category=0)
-
 ```
 
 Returns a bundle of 7 data frames with different info, reflecting what is shown in the Google Trends interface:
@@ -110,6 +114,13 @@ gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geo
 ```
 
 ### Interest by Country
+
+Breaking out level of interest for the term within countries. This is helpful in understanding what geographic regions have higher interest in the term, but is **not** what you may think it is:
+
+* NOT a ranking of where in the world searches the most searches are coming from on the target keyword.
+* Rather, it is a ranking of countries where searches for this term are the **highest proportion of overall searches within that country**.
+
+Again, gtrendsR is just fetching the same info that you would see in the Google Trends interface.
 
 ```{r}
 ## need to filter for top 20 countries
@@ -156,8 +167,8 @@ You may notice in the Google Trends interface that when you type in various term
 
 * instead of standard 'search term' under the keyword you may see 'Topic' or 'Video game' or any number of other relevant themes.
 * these searches tend to be more refined for the term: trends may include broader reach based on the topic, or narrower focused on the specific theme.
-* afaik, no way to specify these variations within the gtrendsR/API query
-* CAN use the encoded variation of the term shown in the browser
+* afaik, there's no way to specify these variations within the gtrendsR queryo
+* CAN use the encoded variation of the term shown in the browser with gtrendsR.
 
 <insert image>
 ![Google Trends example with suggested variation on search type](images/google_trends_search_type_example.png)
@@ -175,7 +186,6 @@ gt_results_alt <- gtrends(keyword='/m/0vpj4_b',
         category=0)
 ```
         
-
 ```{r}
 chart_title <- "Searches for: Cryptocurrency - Topic"
 sub_title <- "Period: past 7 days; Geo: world; Prop: 'web'; Category: all"
@@ -187,12 +197,16 @@ gt_results_alt$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))
 
 ## Example 2: multiple terms
 
-So the above is easy way to work with individual terms.
+The above example shows how easy way it is to work with individual terms. gtrendsR also allows for working with multiple terms. The same limit of 5 search terms as in the Google Trends interface applies. 
 
 ### Set query parameters
 
 ```{r}
-srch_term <- c("covid-19","climate change")
+srch_term <- c("cryptocurrency",
+               "stock market",
+               "real estate",
+               "gold",
+               "casino")
 period <- "today 3-m"
 ctry <- "" ## blank = world; based on world countries ISO code
 prop <- c("web")
@@ -215,15 +229,21 @@ gt_results <- gtrends(keyword=srch_term,
         category=cat)
 ```
 
-Returns bundle of same 7 data frames, with data for each search term within them:
+Returns the same bundle of same 7 data frames, with data for each search term within them. The structure of the 'interest_over_time' component looks like this:
 
 ```{r}
-names(gt_results)
+str(gt_results$interest_over_time)
 ```
 
-### Interest over time
+These are the keywords within the 'interest_over_time':
 
-The main data with search terms for the selected search term, country, period, property, and category.
+```{r}
+unique(gt_results$interest_over_time$keyword)
+```
+
+### Interest over time for multiple keywords
+
+Trends for the search terms for the selected search term, country, period, property, and category.
 
 ```{r}
 chart_title <- paste0("Searches for: ",paste0(srch_term, collapse=", "))
@@ -235,6 +255,8 @@ gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geo
 ```
 ### Related Topics
 
+This doesn't always return results.
+
 ```{r}
 ## need better example
 ```
@@ -242,7 +264,8 @@ gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geo
 ### Related Queries
 
 ```{r}
-for(st in 1:length(srch_term)){
+select_terms <- srch_term[1:3]
+for(st in 1:length(select_terms)){
   chart_title <- paste0("'",srch_term[st], "' related queries")
   top <- gt_results$related_queries %>% filter(keyword==srch_term[st] & related_queries=='top')
   top$value <- as.factor(top$value)
@@ -253,6 +276,6 @@ for(st in 1:length(srch_term)){
     labs(title=chart_title, y='', x='')
   print(plot)
 }
-
 ```
 
+So that is quick overview of the key features of the gtrendsR package for Google Trends. 
