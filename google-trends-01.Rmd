@@ -253,6 +253,7 @@ gt_results$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))+geo
   labs(title=chart_title, subtitle=sub_title, x="", y="")
 
 ```
+
 ### Related Topics
 
 This doesn't always return results.
