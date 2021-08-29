@@ -22,7 +22,9 @@ Explore capabilities of the
 [gtrendsR vignette](https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf)
 
 Other useful references: <br />
-https://blog.quiet.ly/industry/exploring-google-trends-explore-function-finding-keywords-queries/
+* https://blog.quiet.ly/industry/exploring-google-trends-explore-function-finding-keywords-queries/ 
+* https://blog.google/products/search/15-tips-getting-most-out-google-trends/
+    + this is the more authoritative and recent blog post
 
 Libraries used:
 
@@ -194,6 +196,8 @@ gt_results_alt$interest_over_time %>% ggplot(aes(x=date, y=hits, color=keyword))
   labs(title=chart_title, subtitle=sub_title, x="", y="")
 
 ```
+
+**Important**: you can't mix these topic codes with regular search terms in same query. :(
 
 ## Example 2: multiple terms
 
